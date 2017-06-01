@@ -7,17 +7,17 @@
 //
 
 #import "ViewController.h"
-
+#import "SPwdGen.h"
 @interface ViewController ()
-
 @end
+
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-        ///fsdfasdfasdfasfasdfasdfasdfadf
+	NSLog(@"%@", [[SPwdGen shareInstance] generationRandomPassword:@"jianshe"]);
     // Do any additional setup after loading the view, typically from a nib.
 }
 

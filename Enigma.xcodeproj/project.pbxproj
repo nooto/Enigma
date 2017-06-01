@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E26B62981EE015B200F6E285 /* SPwdGen.m in Sources */ = {isa = PBXBuildFile; fileRef = E26B62971EE015B200F6E285 /* SPwdGen.m */; };
 		E27E43DF1E6FEC05000385D3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E27E43DE1E6FEC05000385D3 /* main.m */; };
 		E27E43E21E6FEC05000385D3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E27E43E11E6FEC05000385D3 /* AppDelegate.m */; };
 		E27E43E51E6FEC05000385D3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E27E43E41E6FEC05000385D3 /* ViewController.m */; };
@@ -16,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E26B62961EE015B200F6E285 /* SPwdGen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPwdGen.h; sourceTree = "<group>"; };
+		E26B62971EE015B200F6E285 /* SPwdGen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPwdGen.m; sourceTree = "<group>"; };
 		E27E43DA1E6FEC05000385D3 /* Enigma.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Enigma.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E27E43DE1E6FEC05000385D3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E27E43E01E6FEC05000385D3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -62,6 +65,8 @@
 				E27E43E11E6FEC05000385D3 /* AppDelegate.m */,
 				E27E43E31E6FEC05000385D3 /* ViewController.h */,
 				E27E43E41E6FEC05000385D3 /* ViewController.m */,
+				E26B62961EE015B200F6E285 /* SPwdGen.h */,
+				E26B62971EE015B200F6E285 /* SPwdGen.m */,
 				E27E43E61E6FEC05000385D3 /* Main.storyboard */,
 				E27E43E91E6FEC05000385D3 /* Assets.xcassets */,
 				E27E43EB1E6FEC05000385D3 /* LaunchScreen.storyboard */,
@@ -150,6 +155,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E26B62981EE015B200F6E285 /* SPwdGen.m in Sources */,
 				E27E43E51E6FEC05000385D3 /* ViewController.m in Sources */,
 				E27E43E21E6FEC05000385D3 /* AppDelegate.m in Sources */,
 				E27E43DF1E6FEC05000385D3 /* main.m in Sources */,
@@ -307,6 +313,7 @@
 				E27E43F31E6FEC05000385D3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
