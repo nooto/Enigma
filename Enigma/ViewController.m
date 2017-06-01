@@ -17,8 +17,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-	NSLog(@"%@", [[SPwdGen shareInstance] generationRandomPassword:@"jianshe"]);
-    // Do any additional setup after loading the view, typically from a nib.
+	[self.mDescrpTextField setKeyboardType:UIKeyboardTypeASCIICapable];
+	    // Do any additional setup after loading the view, typically from a nib.
 }
 
 
@@ -27,5 +27,13 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(IBAction)craetButtonAction:(id)sender{
+	NSDictionary *dict = [[SPwdGen shareInstance] generationRandomPassword:self.mDescrpTextField.text];
+
+	[self.mPublicKeyLabel setText:dict[KPublicKey]];
+	[self.mKeyLabel setText:dict[KKey]];
+	[self.mPwdLabel setText:dict[KPWD]];
+	
+}
 
 @end

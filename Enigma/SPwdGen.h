@@ -7,8 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#define  KName        @"name"
+#define  KDescrp      @"descrp"
+#define  KPublicKey   @"publicKey"
+#define  KKey         @"key"
+#define  KPWD         @"pwd"
 
 @interface SPwdGen : NSObject
 +(SPwdGen*)shareInstance;
--(NSString*)generationRandomPassword:(NSString*)inputKey;
+-(NSDictionary*)generationRandomPassword:(NSString*)inputKey;
 @end

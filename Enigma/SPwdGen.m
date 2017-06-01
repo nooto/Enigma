@@ -39,20 +39,25 @@
 		[wordKey replaceCharactersInRange:NSMakeRange(number, 1) withString:tempStr];
 	}
 
-	NSLog(@"%@", wordKey);
-
 	NSMutableString * result = [[NSMutableString alloc]initWithCapacity:length];
-	for (NSInteger i = 0; i < length; i ++) {
-		int number = arc4random() % wordKey.length;
-		[result appendString:[wordKey substringWithRange:NSMakeRange(number, 1)]];
+		//不会出现重复的key
+	if (wordKey.length > length) {
+		int number = arc4random() % (wordKey.length - length);
+		[result appendString:[wordKey substringWithRange:NSMakeRange(number, length)]];
 	}
-
+		//可能会出现重复key
+	else{
+		for (NSInteger i = 0; i < length; i ++) {
+			int number = arc4random() % wordKey.length;
+			[result appendString:[wordKey substringWithRange:NSMakeRange(number, 1)]];
+		}
+	}
 	return result;
-
 }
 
+-(NSDictionary*)generationRandomPassword:(NSString*)inputKey{
+	if (inputKey.length <= 0) return nil;
 
--(NSString*)generationRandomPassword:(NSString*)inputKey{
 	NSString *publicKey = [self generationRandomKeyWithkey:PublicKey length:PublicKey.length];
 	NSString *Key = [self generationRandomKeyWithkey:OriginalKey length:publicKey.length];
 
@@ -73,8 +78,13 @@
 
 		[result appendString:[Key substringWithRange:NSMakeRange(tempindex, 1)]];
 	}
-	return result;
-}
 
+	NSMutableDictionary *dict = [[NSMutableDictionary alloc] initWithCapacity:3];
+	[dict setValue:inputKey forKey:KDescrp];
+	[dict setValue:result forKey:KPWD];
+	[dict setValue:publicKey forKey:KPublicKey];
+	[dict setValue:Key forKey:KKey];
+	return dict;
+}
 
 @end
