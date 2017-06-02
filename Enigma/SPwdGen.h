@@ -13,7 +13,16 @@
 #define  KKey         @"key"
 #define  KPWD         @"pwd"
 
+#define  PwdGenShareInstance [SPwdGen shareInstance]
+
+
 @interface SPwdGen : NSObject
+
+@property (nonatomic, strong) NSMutableArray *mArrDatas;
 +(SPwdGen*)shareInstance;
 -(NSDictionary*)generationRandomPassword:(NSString*)inputKey;
+
+-(BOOL)isExistName:(NSString*)name;
+-(BOOL)savePasswordDataWithName:(NSString*)name data:(NSDictionary*)dict;
+-(BOOL)removePwdDatasWithName:(NSString*)name;
 @end

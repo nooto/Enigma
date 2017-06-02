@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E26B62981EE015B200F6E285 /* SPwdGen.m in Sources */ = {isa = PBXBuildFile; fileRef = E26B62971EE015B200F6E285 /* SPwdGen.m */; };
+		E26E3CED1EE10AD100E2A8C3 /* SFHFKeychainUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = E26E3CEC1EE10AD100E2A8C3 /* SFHFKeychainUtils.m */; };
 		E27E43DF1E6FEC05000385D3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E27E43DE1E6FEC05000385D3 /* main.m */; };
 		E27E43E21E6FEC05000385D3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E27E43E11E6FEC05000385D3 /* AppDelegate.m */; };
 		E27E43E51E6FEC05000385D3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E27E43E41E6FEC05000385D3 /* ViewController.m */; };
@@ -19,6 +20,8 @@
 /* Begin PBXFileReference section */
 		E26B62961EE015B200F6E285 /* SPwdGen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPwdGen.h; sourceTree = "<group>"; };
 		E26B62971EE015B200F6E285 /* SPwdGen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPwdGen.m; sourceTree = "<group>"; };
+		E26E3CEB1EE10AD100E2A8C3 /* SFHFKeychainUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFHFKeychainUtils.h; sourceTree = "<group>"; };
+		E26E3CEC1EE10AD100E2A8C3 /* SFHFKeychainUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFHFKeychainUtils.m; sourceTree = "<group>"; };
 		E27E43DA1E6FEC05000385D3 /* Enigma.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Enigma.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E27E43DE1E6FEC05000385D3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E27E43E01E6FEC05000385D3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -42,6 +45,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E26E3CEA1EE10AD100E2A8C3 /* SFHFKeychainUtils */ = {
+			isa = PBXGroup;
+			children = (
+				E26E3CEB1EE10AD100E2A8C3 /* SFHFKeychainUtils.h */,
+				E26E3CEC1EE10AD100E2A8C3 /* SFHFKeychainUtils.m */,
+			);
+			path = SFHFKeychainUtils;
+			sourceTree = "<group>";
+		};
 		E27E43D11E6FEC05000385D3 = {
 			isa = PBXGroup;
 			children = (
@@ -61,6 +73,7 @@
 		E27E43DC1E6FEC05000385D3 /* Enigma */ = {
 			isa = PBXGroup;
 			children = (
+				E26E3CEA1EE10AD100E2A8C3 /* SFHFKeychainUtils */,
 				E27E43E01E6FEC05000385D3 /* AppDelegate.h */,
 				E27E43E11E6FEC05000385D3 /* AppDelegate.m */,
 				E27E43E31E6FEC05000385D3 /* ViewController.h */,
@@ -158,6 +171,7 @@
 				E26B62981EE015B200F6E285 /* SPwdGen.m in Sources */,
 				E27E43E51E6FEC05000385D3 /* ViewController.m in Sources */,
 				E27E43E21E6FEC05000385D3 /* AppDelegate.m in Sources */,
+				E26E3CED1EE10AD100E2A8C3 /* SFHFKeychainUtils.m in Sources */,
 				E27E43DF1E6FEC05000385D3 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

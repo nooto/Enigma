@@ -23,10 +23,80 @@
 
 -(id)init{
 	if (self = [super init]) {
-
+		[self loadAllPWDDatas];
 	}
 	return self;
 }
+
+#pragma mark - 数据管理。
+-(NSMutableArray*)mArrDatas{
+	if (!_mArrDatas) {
+		_mArrDatas = [[NSMutableArray alloc] initWithCapacity:1];
+	}
+	return _mArrDatas;
+}
+
+-(NSString*)dictPath{
+	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
+														 NSUserDomainMask, YES);
+	NSString  *dictPath = [[paths objectAtIndex:0]
+						   stringByAppendingPathComponent:@"dict.out"];
+
+	return dictPath;
+}
+
+-(void)loadAllPWDDatas{
+	[self.mArrDatas removeAllObjects];
+	[self.mArrDatas addObjectsFromArray:[NSArray arrayWithContentsOfFile:[self dictPath]]];
+}
+
+-(BOOL)saveArrDatas{
+	return  [self.mArrDatas writeToFile:[self dictPath] atomically:YES];
+}
+
+-(BOOL)removePwdDatasWithName:(NSString*)name{
+	for (NSInteger i = 0; i < self.mArrDatas.count; i ++) {
+		NSDictionary *dict = self.mArrDatas[i];
+		if ([dict isKindOfClass:[NSDictionary class]]) {
+
+			if ([dict[KName] isEqualToString:name]) {
+
+				[self.mArrDatas removeObjectAtIndex:i];
+				[self saveArrDatas];
+				return YES;
+			}
+		}
+	}
+
+	return NO;
+}
+
+
+-(BOOL)savePasswordDataWithName:(NSString*)name data:(NSDictionary*)dict{
+	for (NSDictionary *tempDict in self.mArrDatas) {
+		if ([tempDict[KName] isEqualToString:name]) {
+			break;
+		}
+	}
+	NSMutableDictionary *saveData = [[NSMutableDictionary alloc] initWithDictionary:dict];
+	[saveData setValue:name forKey:KName];
+	[self.mArrDatas addObject:saveData];
+
+	return  [self saveArrDatas];
+}
+
+
+-(BOOL)isExistName:(NSString*)name{
+	for (NSDictionary *dict in self.mArrDatas) {
+		if ([dict[KName] isEqualToString:name]) {
+			return YES;
+		}
+	}
+
+	return NO;
+}
+
+#pragma mark - 生成
 
 -(NSString*)generationRandomKeyWithkey:(NSString*)key length:(NSInteger)length{
 

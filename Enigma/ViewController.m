@@ -33,7 +33,10 @@
 	[self.mPublicKeyLabel setText:dict[KPublicKey]];
 	[self.mKeyLabel setText:dict[KKey]];
 	[self.mPwdLabel setText:dict[KPWD]];
-	
+
+	[PwdGenShareInstance savePasswordDataWithName:@"JIANSHEN" data:dict];
+
+
 }
 
 @end
