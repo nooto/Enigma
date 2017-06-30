@@ -8,7 +8,11 @@
 
 #import "ViewController.h"
 #import "SPwdGen.h"
-@interface ViewController ()
+#import "ListViewTableViewCell.h"
+@interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
+@property (nonatomic, weak) IBOutlet UITableView *mTableView;
+@property (nonatomic, weak) IBOutlet UIImageView *mEmptyImageView;
+@property (nonatomic, weak) IBOutlet UILabel *mLabel;
 @end
 
 
@@ -16,10 +20,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-	[self.mDescrpTextField setKeyboardType:UIKeyboardTypeASCIICapable];
-	    // Do any additional setup after loading the view, typically from a nib.
+	[self adjustTableView];
 }
+
 
 
 - (void)didReceiveMemoryWarning {
@@ -27,16 +30,27 @@
     // Dispose of any resources that can be recreated.
 }
 
--(IBAction)craetButtonAction:(id)sender{
-	NSDictionary *dict = [[SPwdGen shareInstance] generationRandomPassword:self.mDescrpTextField.text];
 
-	[self.mPublicKeyLabel setText:dict[KPublicKey]];
-	[self.mKeyLabel setText:dict[KKey]];
-	[self.mPwdLabel setText:dict[KPWD]];
-
-	[PwdGenShareInstance savePasswordDataWithName:@"JIANSHEN" data:dict];
-
-
+-(void)adjustTableView{
+//	self.mTableView.hidden = PwdGenShareInstance.mArrDatas.count >0 ? NO :YES;
+//	self.mEmptyImageView.hidden = self.mLabel.hidden = !self.mTableView.hidden;
+	self.mTableView.hidden = NO;
 }
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+	return PwdGenShareInstance.mArrDatas.count;
+}
+
+-(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+	static NSString *identifier = @"ListViewTableViewCell";
+	ListViewTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+	if ([cell isKindOfClass:[ListViewTableViewCell class]]) {
+		if (indexPath.row < PwdGenShareInstance.mArrDatas.count) {
+			[cell setMCurGenData:PwdGenShareInstance.mArrDatas[indexPath.row]];
+		}
+	}
+	return cell;
+}
+
 
 @end

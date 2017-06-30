@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E267A45D1F06443700FB6EBB /* ListViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E267A45C1F06443700FB6EBB /* ListViewTableViewCell.m */; };
 		E26B62981EE015B200F6E285 /* SPwdGen.m in Sources */ = {isa = PBXBuildFile; fileRef = E26B62971EE015B200F6E285 /* SPwdGen.m */; };
 		E26E3CED1EE10AD100E2A8C3 /* SFHFKeychainUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = E26E3CEC1EE10AD100E2A8C3 /* SFHFKeychainUtils.m */; };
 		E27E43DF1E6FEC05000385D3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E27E43DE1E6FEC05000385D3 /* main.m */; };
@@ -18,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E267A45B1F06443700FB6EBB /* ListViewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewTableViewCell.h; sourceTree = "<group>"; };
+		E267A45C1F06443700FB6EBB /* ListViewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewTableViewCell.m; sourceTree = "<group>"; };
 		E26B62961EE015B200F6E285 /* SPwdGen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPwdGen.h; sourceTree = "<group>"; };
 		E26B62971EE015B200F6E285 /* SPwdGen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPwdGen.m; sourceTree = "<group>"; };
 		E26E3CEB1EE10AD100E2A8C3 /* SFHFKeychainUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFHFKeychainUtils.h; sourceTree = "<group>"; };
@@ -45,6 +48,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E267A45A1F06440B00FB6EBB /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				E267A45B1F06443700FB6EBB /* ListViewTableViewCell.h */,
+				E267A45C1F06443700FB6EBB /* ListViewTableViewCell.m */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		E26E3CEA1EE10AD100E2A8C3 /* SFHFKeychainUtils */ = {
 			isa = PBXGroup;
 			children = (
@@ -73,6 +85,7 @@
 		E27E43DC1E6FEC05000385D3 /* Enigma */ = {
 			isa = PBXGroup;
 			children = (
+				E267A45A1F06440B00FB6EBB /* UI */,
 				E26E3CEA1EE10AD100E2A8C3 /* SFHFKeychainUtils */,
 				E27E43E01E6FEC05000385D3 /* AppDelegate.h */,
 				E27E43E11E6FEC05000385D3 /* AppDelegate.m */,
@@ -168,6 +181,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E267A45D1F06443700FB6EBB /* ListViewTableViewCell.m in Sources */,
 				E26B62981EE015B200F6E285 /* SPwdGen.m in Sources */,
 				E27E43E51E6FEC05000385D3 /* ViewController.m in Sources */,
 				E27E43E21E6FEC05000385D3 /* AppDelegate.m in Sources */,

@@ -23,7 +23,6 @@
 
 -(id)init{
 	if (self = [super init]) {
-		[self loadAllPWDDatas];
 	}
 	return self;
 }
@@ -31,8 +30,9 @@
 #pragma mark - 数据管理。
 -(NSMutableArray*)mArrDatas{
 	if (!_mArrDatas) {
-		_mArrDatas = [[NSMutableArray alloc] initWithCapacity:1];
+		_mArrDatas = [[NSMutableArray alloc] initWithArray:[NSArray arrayWithContentsOfFile:[self dictPath]]];
 	}
+
 	return _mArrDatas;
 }
 
@@ -45,10 +45,6 @@
 	return dictPath;
 }
 
--(void)loadAllPWDDatas{
-	[self.mArrDatas removeAllObjects];
-	[self.mArrDatas addObjectsFromArray:[NSArray arrayWithContentsOfFile:[self dictPath]]];
-}
 
 -(BOOL)saveArrDatas{
 	return  [self.mArrDatas writeToFile:[self dictPath] atomically:YES];
